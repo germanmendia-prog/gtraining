@@ -404,18 +404,17 @@ const PHASES=[
 // ✅ Barbells + plates + racks
 
 const DAYS=[
-  {name:"Lunes",short:"L",focus:"Push — Pecho + Hombros + Tríceps + Core",color:"#e8ff47",
+  {name:"Lunes",short:"L",focus:"Push — Pecho + Tríceps + Core",color:"#e8ff47",
    gym:{
      warmup:{time:"8 min",steps:["5 min bicicleta estática (fila de spinning)","Rotación de hombros 15 reps","Push-up lento × 10 reps de calentamiento","Apertura con mancuernas ligeras 10 reps","Plancha 30 seg"]},
      exercises:[
        {name:"Press banca con barra",meta:"4×8-10 · 90s desc.",tip:"Escápulas retraídas en el banco. Baja 2 seg controlado. Rango completo.",machine:"Banco con barra olímpica — área de racks al fondo",dw:95,reps:"8-10",series:4,tags:[{t:"Pecho",c:"m"},{t:"Barra",c:"w"},{t:"Compuesto",c:"c"}]},
-       {name:"Press militar con barra (OHP)",meta:"4×8-10 · 90s desc.",tip:"Core apretado, glúteos firmes — no arqueés la espalda baja. Barra frente al cuerpo, no detrás.",machine:"Rack de sentadilla con barra / banco vertical",dw:75,reps:"8-10",series:4,tags:[{t:"Deltoides",c:"m"},{t:"Barra",c:"w"},{t:"Compuesto",c:"c"}]},
        {name:"Press inclinado en máquina",meta:"4×10-12 · 75s desc.",tip:"Ajustá el asiento para que los mangos queden a la altura del pecho superior.",machine:"Máquina de press inclinado — lado izquierdo del gym",dw:70,reps:"10-12",series:4,tags:[{t:"Pecho sup.",c:"m"},{t:"Máquina",c:"p"}]},
-       {name:"Elevación lateral con mancuernas",meta:"4×12-15 · 60s desc.",tip:"Ligero lean forward. Codo semiflexionado. Sube hasta el hombro.",machine:"Rack de mancuernas — lado derecho del gym",dw:20,reps:"12-15",series:4,tags:[{t:"Deltoides med.",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Aperturas en máquina Pec Fly & Rear Delt",meta:"3×12-15 · 60s desc.",tip:"Codos ligeramente flexionados y fijos — el movimiento es puro pectoral, no empujes con el hombro.",machine:"Máquina Pec Fly & Rear Delt (asiento rojo) — nueva confirmada",dw:40,reps:"12-15",series:3,tags:[{t:"Pecho",c:"m"},{t:"Máquina",c:"p"}]},
        {name:"Fondos en paralelas (dips)",meta:"3×8-12 · 75s desc.",tip:"Lean forward activa más pectoral que tríceps.",machine:"Barras paralelas — área de racks",dw:0,reps:"8-12",series:3,tags:[{t:"Pecho/Trí.",c:"m"},{t:"Peso corporal",c:"b"}]},
        {name:"Extensión tríceps en polea alta",meta:"3×12-15 · 60s desc.",tip:"Codo pegado al cuerpo. Solo el antebrazo se mueve. Agarre en cuerda.",machine:"Torre de cables — attachment cuerda arriba",dw:35,reps:"12-15",series:3,tags:[{t:"Tríceps",c:"m"},{t:"Cable",c:"p"}]},
-       {name:"Facepull en cable",meta:"3×15 · 45s desc.",tip:"Cable a altura de cara. Cuerda — jala hacia la frente. Salud del hombro tras tanto press.",machine:"Torre de cables doble — attachment cuerda al centro",dw:35,reps:"15",series:3,tags:[{t:"Deltoides post.",c:"m"},{t:"Cable",c:"p"}]},
-       {name:"Plancha frontal",meta:"3×30-45s · 45s desc.",tip:"Cuerpo en línea recta de cabeza a talón — no dejes caer la cadera ni la subas en punta.",machine:"Solo peso corporal",dw:0,reps:"30-45s",series:3,tags:[{t:"Core",c:"m"},{t:"Peso corporal",c:"b"}]}
+       {name:"Press francés con barra EZ",meta:"3×10-12 · 60s desc.",tip:"Codos al techo, quietos — solo baja la barra hacia la frente controlado.",machine:"Banco plano + barra EZ — área de pesas libres",dw:45,reps:"10-12",series:3,tags:[{t:"Tríceps",c:"m"},{t:"Barra EZ",c:"w"}]},
+       {name:"Crunch básico",meta:"3×15-20 · 45s desc.",tip:"Manos detrás de la cabeza sin tirar del cuello — subí solo los omóplatos del piso, exhalá arriba.",machine:"Solo peso corporal",dw:0,reps:"15-20",series:3,tags:[{t:"Core",c:"m"},{t:"Peso corporal",c:"b"}]}
      ],
      cooldown:{time:"5 min",steps:["Estiramiento pecho en pared 30s c/lado","Estiramiento tríceps detrás de la cabeza 30s c/lado","Respiración profunda 2 min"]}
    },
@@ -423,18 +422,17 @@ const DAYS=[
      warmup:{time:"6 min",steps:["2 min trote en el lugar","Rotación de hombros 15 reps","10 push-ups lentos de calentamiento","Círculos de brazos 30 seg","Plancha 30 seg"]},
      exercises:[
        {name:"Push-up con elevación de pierna",meta:"4×12-15 · 60s desc.",tip:"Contracción pectoral en la parte alta del movimiento.",machine:"Solo peso corporal",dw:0,reps:"12-15",series:4,tags:[{t:"Pecho",c:"m"},{t:"Peso corporal",c:"b"}]},
-       {name:"Press de hombros con mancuernas",meta:"4×10 · 75s desc.",tip:"No bloquees el codo arriba — tensión continua.",machine:"Mancuernas 30-35 lb",dw:30,reps:"10",series:4,tags:[{t:"Deltoides ant.",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Press con mancuernas en suelo",meta:"4×10-12 · 75s desc.",tip:"Controla la bajada 3 segundos — ahí está la ganancia.",machine:"Mancuernas 30-35 lb",dw:30,reps:"10-12",series:4,tags:[{t:"Pecho",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Elevación lateral con mancuernas",meta:"4×12 · 60s desc.",tip:"Lean forward ligero — activa el deltoides medio completo.",machine:"Mancuernas 15-20 lb",dw:15,reps:"12",series:4,tags:[{t:"Deltoides med.",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Apertura con mancuernas en suelo",meta:"3×12-15 · 60s desc.",tip:"Codos fijos semiflexionados — siente el estiramiento del pectoral abajo.",machine:"Mancuernas 20-25 lb",dw:20,reps:"12-15",series:3,tags:[{t:"Pecho",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Diamond push-up",meta:"3×10-12 · 60s desc.",tip:"Manos en triángulo bajo el pecho.",machine:"Solo peso corporal",dw:0,reps:"10-12",series:3,tags:[{t:"Tríceps",c:"m"},{t:"Peso corporal",c:"b"}]},
+       {name:"Fondos en banco (bench dips)",meta:"3×12-15 · 60s desc.",tip:"Manos en el borde del banco, baja controlado — codos hacia atrás, no hacia afuera.",machine:"Silla o banco firme",dw:0,reps:"12-15",series:3,tags:[{t:"Tríceps",c:"m"},{t:"Peso corporal",c:"b"}]},
        {name:"Extensión de tríceps con mancuerna",meta:"3×15 · 45s desc.",tip:"Codo fijo apuntando al techo — solo mueve el antebrazo.",machine:"Mancuerna 20-25 lb",dw:20,reps:"15",series:3,tags:[{t:"Tríceps",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Elevación posterior inclinado",meta:"3×15 · 45s desc.",tip:"Torso inclinado a 45°, codos ligeramente flexionados — foco deltoides posterior, salud del hombro.",machine:"Mancuernas 10-15 lb",dw:10,reps:"15",series:3,tags:[{t:"Deltoides post.",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Plancha frontal",meta:"3×30-45s · 45s desc.",tip:"Cuerpo en línea recta de cabeza a talón — no dejes caer la cadera ni la subas en punta.",machine:"Solo peso corporal",dw:0,reps:"30-45s",series:3,tags:[{t:"Core",c:"m"},{t:"Peso corporal",c:"b"}]}
+       {name:"Crunch básico",meta:"3×15-20 · 45s desc.",tip:"Manos detrás de la cabeza sin tirar del cuello — subí solo los omóplatos del piso, exhalá arriba.",machine:"Solo peso corporal",dw:0,reps:"15-20",series:3,tags:[{t:"Core",c:"m"},{t:"Peso corporal",c:"b"}]}
      ],
      cooldown:{time:"5 min",steps:["Estiramiento pecho en pared 30s c/lado","Estiramiento de tríceps 30s","Respiración diafragmática 2 min"]}
    }
   },
-  {name:"Martes",short:"M",focus:"Pull — Espalda + Bíceps + Trapecio + Core",color:"#47c8ff",
+  {name:"Martes",short:"M",focus:"Pull — Espalda + Core",color:"#47c8ff",
    gym:{
      warmup:{time:"8 min",steps:["5 min bicicleta estática","Rotación escapular con brazos 15 reps","Remo con cable ligero 15 reps calentamiento","Colgado en barra de dominadas 20 seg","Rotación torácica 1 min"]},
      exercises:[
@@ -442,12 +440,11 @@ const DAYS=[
        {name:"Jalón al pecho en polea",meta:"4×10-12 · 75s desc.",tip:"Pecho arriba, jala hacia la clavícula. No uses impulso.",machine:"Torre de cables — polea alta con agarre ancho",dw:100,reps:"10-12",series:4,tags:[{t:"Lats",c:"m"},{t:"Cable",c:"p"}]},
        {name:"Remo con mancuerna apoyado en banco inclinado",meta:"4×10 c/lado · 75s desc.",tip:"Pecho apoyado en el banco — cero balanceo, cero carga en la espalda baja.",machine:"Banco inclinado + mancuerna — área de pesas libres",dw:40,reps:"10 c/lado",series:4,tags:[{t:"Espalda media",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Remo sentado en máquina",meta:"3×12 · 60s desc.",tip:"Pausa 1 seg con codos atrás — squeeze en cada rep.",machine:"Máquina de remo sentado Lucan — centro del gym",dw:90,reps:"12",series:3,tags:[{t:"Espalda media",c:"m"},{t:"Máquina",c:"p"}]},
-       {name:"Encogimiento con mancuernas",meta:"3×15 · 45s desc.",tip:"Movimiento vertical limpio. Sin rotar. Pausa arriba.",machine:"Rack de mancuernas — mancuernas 40-45 lb",dw:40,reps:"15",series:3,tags:[{t:"Trapecio",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Curl bíceps con barra EZ",meta:"4×10-12 · 60s desc.",tip:"Codos fijos a los costados. Supinación completa al subir.",machine:"Barra EZ + discos — área de pesas libres",dw:55,reps:"10-12",series:4,tags:[{t:"Bíceps",c:"m"},{t:"Barra EZ",c:"w"}]},
-       {name:"Curl martillo con mancuernas",meta:"3×12 · 45s desc.",tip:"Pulgar arriba en todo el recorrido. Controla la bajada.",machine:"Rack de mancuernas — lado derecho del gym",dw:30,reps:"12",series:3,tags:[{t:"Braquial",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Crunch abdominal clásico",meta:"3×15-20 · 45s desc.",tip:"Manos detrás de la cabeza sin jalar el cuello — sube solo con el abdomen.",machine:"Solo peso corporal",dw:0,reps:"15-20",series:3,tags:[{t:"Core",c:"m"},{t:"Peso corporal",c:"b"}]}
+       {name:"Pullover con mancuerna en banco",meta:"3×12 · 60s desc.",tip:"Expande la caja torácica — brazos casi rectos, foco en lats, no en pecho.",machine:"Banco plano + mancuerna — área de pesas libres",dw:35,reps:"12",series:3,tags:[{t:"Lats",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Remo en cable agarre neutro",meta:"3×10-12 · 75s desc.",tip:"Pausa en la contracción. Escápulas juntas y abajo — ángulo distinto al remo con mancuerna.",machine:"Torre de cables — polea baja, agarre V neutro",dw:90,reps:"10-12",series:3,tags:[{t:"Espalda",c:"m"},{t:"Cable",c:"p"}]},
+       {name:"Plancha",meta:"3×30-45s · 45s desc.",tip:"Cuerpo en línea recta de talones a cabeza — cadera ni arriba ni abajo, apretá glúteo y abdomen.",machine:"Solo peso corporal",dw:0,reps:"30-45s",series:3,tags:[{t:"Core",c:"m"},{t:"Peso corporal",c:"b"}]}
      ],
-     cooldown:{time:"5 min",steps:["Posición niño 1 min","Estiramiento bíceps en pared 30s c/lado","Movilidad torácica en piso 2 min"]}
+     cooldown:{time:"5 min",steps:["Posición niño 1 min","Movilidad torácica en piso 2 min"]}
    },
    home:{
      warmup:{time:"6 min",steps:["2 min saltos suaves","Rotación torácica 1 min","Remo con mancuerna ligero 15 reps calentamiento","Superman 10 reps lentos","Apertura de lats 30 seg"]},
@@ -455,73 +452,72 @@ const DAYS=[
        {name:"Remo con mancuerna — unilateral",meta:"4×10 c/lado · 60s desc.",tip:"Rodilla y mano del mismo lado apoyadas — espalda neutra.",machine:"Mancuerna 35-40 lb",dw:35,reps:"10 c/lado",series:4,tags:[{t:"Espalda",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Pullover con mancuerna en suelo",meta:"3×12 · 60s desc.",tip:"Expande la caja torácica + activa lats.",machine:"Mancuerna 25-30 lb",dw:25,reps:"12",series:3,tags:[{t:"Lats",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Remo bilateral con mancuernas",meta:"3×12 · 60s desc.",tip:"Torso a 45°. Las dos mancuernas suben al mismo tiempo.",machine:"Mancuernas 25 lb",dw:25,reps:"12",series:3,tags:[{t:"Espalda",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Encogimiento con mancuernas",meta:"3×15 · 45s desc.",tip:"Movimiento limpio — sin rotar. Pausa arriba.",machine:"Mancuernas 35 lb",dw:35,reps:"15",series:3,tags:[{t:"Trapecio",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Curl de bíceps alternado",meta:"4×10 c/lado · 60s desc.",tip:"Supinación completa de la muñeca al subir.",machine:"Mancuernas 25-30 lb",dw:25,reps:"10 c/lado",series:4,tags:[{t:"Bíceps",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Curl martillo",meta:"3×12 · 45s desc.",tip:"Pulgar arriba en todo el recorrido.",machine:"Mancuernas 25-30 lb",dw:25,reps:"12",series:3,tags:[{t:"Braquial",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Remo renegado (plank row)",meta:"3×10 c/lado · 60s desc.",tip:"Cadera fija, no gires el torso al remar.",machine:"Mancuernas 15-20 lb",dw:15,reps:"10 c/lado",series:3,tags:[{t:"Espalda/Core",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Crunch abdominal clásico",meta:"3×15-20 · 45s desc.",tip:"Manos detrás de la cabeza sin jalar el cuello — sube solo con el abdomen.",machine:"Solo peso corporal",dw:0,reps:"15-20",series:3,tags:[{t:"Core",c:"m"},{t:"Peso corporal",c:"b"}]}
+       {name:"Y-raise boca abajo con mancuernas",meta:"3×15 · 45s desc.",tip:"Acostado boca abajo en el suelo o banco, brazos en Y — foco espalda alta y estabilidad escapular.",machine:"Mancuernas 5-10 lb",dw:7,reps:"15",series:3,tags:[{t:"Espalda alta",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Superman con extensión de brazos",meta:"3×15 · 45s desc.",tip:"Levantá brazos y piernas juntos, pausa arriba — activa espalda baja y dorsales.",machine:"Solo peso corporal",dw:0,reps:"15",series:3,tags:[{t:"Espalda baja",c:"m"},{t:"Peso corporal",c:"b"}]},
+       {name:"Plancha",meta:"3×30-45s · 45s desc.",tip:"Cuerpo en línea recta de talones a cabeza — cadera ni arriba ni abajo, apretá glúteo y abdomen.",machine:"Solo peso corporal",dw:0,reps:"30-45s",series:3,tags:[{t:"Core",c:"m"},{t:"Peso corporal",c:"b"}]}
      ],
-     cooldown:{time:"5 min",steps:["Posición niño 1 min","Estiramiento bíceps en pared 30s c/lado","Movilidad torácica en piso 2 min"]}
+     cooldown:{time:"5 min",steps:["Posición niño 1 min","Movilidad torácica en piso 2 min"]}
    }
   },
-  {name:"Miércoles",short:"X",focus:"Piernas — Cuádriceps + Core",color:"#ff6b35",
+  {name:"Miércoles",short:"X",focus:"Piernas — Cuádriceps + Glúteo/Isquio + Core",color:"#ff6b35",
    gym:{
-     warmup:{time:"10 min",steps:["5 min bicicleta estática intensidad media","10 sentadillas de aire lentas","10 estocadas dinámicas","Activación de cuádriceps sin peso 15 reps","Movilidad de cadera y tobillo en piso 1 min"]},
+     warmup:{time:"10 min",steps:["5 min bicicleta estática intensidad media","10 sentadillas de aire lentas","Activación de glúteo sin peso 15 reps c/lado","Bisagra de cadera sin peso 10 reps","Movilidad de cadera y tobillo en piso 1 min"]},
      exercises:[
        {name:"Hack squat en máquina",meta:"4×8-10 · 90s desc.",tip:"Pies a la altura de hombros, profundidad total. La máquina protege tu espalda baja — foco 100% en las piernas.",machine:"Máquina hack squat — confirmada en gym",dw:140,reps:"8-10",series:4,tags:[{t:"Cuádriceps",c:"m"},{t:"Máquina",c:"p"},{t:"Compuesto",c:"c"}]},
        {name:"Prensa de piernas (pie bajo, énfasis cuádriceps)",meta:"4×10-12 · 90s desc.",tip:"Pies abajo en la plataforma y juntos — mayor activación de cuádriceps.",machine:"Máquina prensa de piernas — confirmada en gym",dw:190,reps:"10-12",series:4,tags:[{t:"Cuádriceps",c:"m"},{t:"Máquina",c:"p"}]},
-       {name:"Sentadilla goblet con mancuerna",meta:"3×12 · 75s desc.",tip:"Profundidad máxima controlada, talones en el piso, torso erguido.",machine:"Mancuerna 40-45 lb",dw:40,reps:"12",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Sentadilla búlgara con mancuernas",meta:"3×10 c/pierna · 75s desc.",tip:"Pie trasero elevado en el banco — torso erguido, foco 100% cuádriceps de la pierna adelantada.",machine:"Banco + mancuernas — área de pesas libres",dw:25,reps:"10 c/pierna",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Zancada caminando con mancuernas",meta:"3×10 c/pierna · 75s desc.",tip:"Rodilla delantera no pasa el pie — pasos largos y controlados.",machine:"Mancuernas 25 lb c/u",dw:25,reps:"10 c/pierna",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Extensión de cuádriceps",meta:"3×15 · 60s desc.",tip:"Pausa 1 seg arriba con contracción isométrica completa.",machine:"Máquina extensión cuádriceps (leg extension) — fotos gym",dw:55,reps:"15",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Máquina",c:"p"}]},
-       {name:"Elevación de pantorrillas en prensa de piernas",meta:"4×15-20 · 45s desc.",tip:"Rango completo — estiramiento total abajo, contracción total arriba. Sin cargar la espalda.",machine:"Máquina prensa de piernas — usada como calf press",dw:150,reps:"15-20",series:4,tags:[{t:"Gemelos",c:"m"},{t:"Máquina",c:"p"}]},
-       {name:"Elevación de piernas acostado",meta:"3×15 · 45s desc.",tip:"Zona lumbar pegada al piso todo el tiempo — baja las piernas sin que se separe.",machine:"Solo peso corporal",dw:0,reps:"15",series:3,tags:[{t:"Core inferior",c:"m"},{t:"Peso corporal",c:"b"}]}
+       {name:"Peso muerto rumano con mancuernas",meta:"4×10-12 · 90s desc.",tip:"Bisagra de cadera pura, mancuernas cerca del cuerpo, espalda neutra — rodillas semiflexionadas fijas. Nunca redondees la espalda baja.",machine:"Mancuernas 45-50 lb — área de pesas libres",dw:50,reps:"10-12",series:4,tags:[{t:"Isquio/Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Curl isquiotibiales",meta:"3×12-15 · 60s desc.",tip:"Movimiento lento y controlado — no uses el impulso de la cadera.",machine:"Máquina curl isquiotibial (leg curl) — fotos gym",dw:60,reps:"12-15",series:3,tags:[{t:"Isquiotibiales",c:"m"},{t:"Máquina",c:"p"}]},
+       {name:"Hip thrust con mancuerna",meta:"3×12-15 · 75s desc.",tip:"Espalda apoyada en el banco, pausa 2 seg arriba apretando el glúteo al máximo.",machine:"Banco + mancuerna — área de pesas libres",dw:45,reps:"12-15",series:3,tags:[{t:"Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Elevación de pantorrillas en prensa de piernas",meta:"4×15-20 · 45s desc.",tip:"Rango completo — estiramiento total abajo, contracción total arriba. Sin cargar la espalda.",machine:"Máquina prensa de piernas — usada como calf press",dw:90,reps:"15-20",series:4,tags:[{t:"Gemelos",c:"m"},{t:"Máquina",c:"p"}]},
+       {name:"Elevación de piernas acostado",meta:"3×15 · 45s desc.",tip:"Zona lumbar pegada al piso todo el tiempo — bajá controlado sin dejar que la espalda se despegue.",machine:"Solo peso corporal",dw:0,reps:"15",series:3,tags:[{t:"Core inferior",c:"m"},{t:"Peso corporal",c:"b"}]}
      ],
-     cooldown:{time:"6 min",steps:["Cuádriceps de pie 30s c/lado","Isquiotibial sentado 1 min","Movilidad de cadera en piso 2 min","Pantorrilla en pared 30s c/lado"]}
+     cooldown:{time:"6 min",steps:["Cuádriceps de pie 30s c/lado","Isquiotibial sentado 1 min","Estiramiento de glúteo (figura 4) 45s c/lado","Pantorrilla en pared 30s c/lado"]}
    },
    home:{
      warmup:{time:"8 min",steps:["2 min trote activo","10 sentadillas de aire lentas","10 estocadas dinámicas","Movilidad de tobillo y cadera 1 min"]},
      exercises:[
        {name:"Sentadilla goblet con mancuerna",meta:"4×12 · 90s desc.",tip:"Profundidad máxima controlada — talones en el piso.",machine:"Mancuerna 40-45 lb",dw:40,reps:"12",series:4,tags:[{t:"Cuádriceps",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Sentadilla búlgara con mancuernas",meta:"3×10 c/pierna · 75s desc.",tip:"Pie trasero elevado en una silla — torso erguido.",machine:"Silla/banco + mancuernas 20-25 lb",dw:20,reps:"10 c/pierna",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Zancada caminando con mancuernas",meta:"3×10 c/pierna · 75s desc.",tip:"Rodilla delantera no pasa el pie.",machine:"Mancuernas 20-25 lb c/u",dw:20,reps:"10 c/pierna",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Step-up con mancuernas en silla/banco",meta:"3×10 c/pierna · 75s desc.",tip:"Empujá con el talón de la pierna que sube — no con la de abajo.",machine:"Silla firme + mancuernas 15-20 lb",dw:15,reps:"10 c/pierna",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Sentadilla isométrica con pulso (wall sit + pulso)",meta:"3×20 pulsos · 60s desc.",tip:"Espalda en la pared, muslos paralelos al piso — quema controlada.",machine:"Solo peso corporal (opcional mancuerna en el regazo)",dw:0,reps:"20 pulsos",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Peso corporal",c:"b"}]},
-       {name:"Elevación de talones (calf raise)",meta:"4×20 · 45s desc.",tip:"Pausa 1 seg arriba para mejor activación.",machine:"Solo peso corporal (mancuerna opcional en mano)",dw:0,reps:"20",series:4,tags:[{t:"Gemelos",c:"b"}]},
-       {name:"Sentadilla sumo con mancuerna",meta:"3×15 · 60s desc.",tip:"Pies a 45° — aprieta cuádriceps y aductores al subir.",machine:"Mancuerna 35-40 lb",dw:35,reps:"15",series:3,tags:[{t:"Cuádriceps/Aductores",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Elevación de piernas acostado",meta:"3×15 · 45s desc.",tip:"Zona lumbar pegada al piso todo el tiempo — baja las piernas sin que se separe.",machine:"Solo peso corporal",dw:0,reps:"15",series:3,tags:[{t:"Core inferior",c:"m"},{t:"Peso corporal",c:"b"}]}
-     ],
-     cooldown:{time:"5 min",steps:["Cuádriceps de pie 30s c/lado","Isquiotibial sentado 1 min","Pantorrilla en pared 30s c/lado"]}
-   }
-  },
-  {name:"Viernes",short:"V",focus:"Piernas — Glúteo/Isquios + Core",color:"#ffb347",
-   gym:{
-     warmup:{time:"8 min",steps:["5 min bicicleta estática intensidad media","Activación de glúteo con banda o sin peso 15 reps c/lado","Puente de glúteo 15 reps","Bisagra de cadera sin peso 10 reps","Movilidad de cadera en piso 1 min"]},
-     exercises:[
-       {name:"Peso muerto rumano con mancuernas",meta:"4×10-12 · 90s desc.",tip:"Bisagra de cadera pura, mancuernas cerca del cuerpo, espalda neutra — rodillas semiflexionadas fijas. Nunca redondees la espalda baja.",machine:"Mancuernas 40-45 lb — área de pesas libres",dw:40,reps:"10-12",series:4,tags:[{t:"Isquio/Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Hip thrust con mancuerna",meta:"4×12-15 · 75s desc.",tip:"Espalda apoyada en el banco, pausa 2 seg arriba apretando el glúteo al máximo.",machine:"Banco + mancuerna — área de pesas libres",dw:45,reps:"12-15",series:4,tags:[{t:"Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Curl isquiotibiales",meta:"4×12-15 · 60s desc.",tip:"Movimiento lento y controlado — no uses el impulso de la cadera.",machine:"Máquina curl isquiotibial (leg curl) — fotos gym",dw:60,reps:"12-15",series:4,tags:[{t:"Isquiotibiales",c:"m"},{t:"Máquina",c:"p"}]},
-       {name:"Zancada inversa con mancuernas",meta:"3×10 c/pierna · 75s desc.",tip:"Empujá con el talón de la pierna delantera — foco glúteo, no cuádriceps.",machine:"Mancuernas 25 lb c/u",dw:25,reps:"10 c/pierna",series:3,tags:[{t:"Glúteo/Isquio",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Sentadilla sumo con mancuerna",meta:"3×15 · 60s desc.",tip:"Pies a 45° — aprieta glúteo y aductores al subir.",machine:"Mancuerna 40 lb",dw:40,reps:"15",series:3,tags:[{t:"Glúteo/Aductores",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Step-up con mancuernas",meta:"3×10 c/pierna · 75s desc.",tip:"Empujá con el talón, no saltes — control total en la bajada.",machine:"Banco + mancuernas — área de pesas libres",dw:25,reps:"10 c/pierna",series:3,tags:[{t:"Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Abducción de cadera en cable",meta:"3×15 c/lado · 45s desc.",tip:"Tobillera en polea baja — pierna recta, controla la vuelta.",machine:"Torre de cables — polea baja, attachment tobillera",dw:20,reps:"15 c/lado",series:3,tags:[{t:"Glúteo medio",c:"m"},{t:"Cable",c:"p"}]},
-       {name:"Bicicleta (bicycle crunch)",meta:"3×20 c/lado · 45s desc.",tip:"Codo hacia la rodilla contraria, extendé la otra pierna — ritmo controlado, no rápido.",machine:"Solo peso corporal",dw:0,reps:"20 c/lado",series:3,tags:[{t:"Oblicuos",c:"m"},{t:"Peso corporal",c:"b"}]}
-     ],
-     cooldown:{time:"7 min",steps:["Estiramiento de glúteo (figura 4) 45s c/lado","Isquiotibial sentado 1 min","Posición niño 1 min","Respiración profunda 2 min"]}
-   },
-   home:{
-     warmup:{time:"8 min",steps:["3 min trote activo","Puente de glúteo 15 reps","Bisagra de cadera sin peso 10 reps","Movilidad de cadera 1 min"]},
-     exercises:[
        {name:"Peso muerto rumano con mancuernas",meta:"4×10 · 75s desc.",tip:"Bisagra de cadera — siente el estiramiento del isquiotibial, espalda neutra siempre.",machine:"Mancuernas 35 lb c/u",dw:35,reps:"10",series:4,tags:[{t:"Isquio/Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
        {name:"Hip thrust con mancuerna",meta:"4×15 · 60s desc.",tip:"Pausa 2 seg arriba apretando el glúteo.",machine:"Mancuerna 40-45 lb",dw:40,reps:"15",series:4,tags:[{t:"Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Zancada inversa con mancuernas",meta:"3×10 c/pierna · 75s desc.",tip:"Empuja con el talón delantero — foco glúteo.",machine:"Mancuernas 25 lb c/u",dw:25,reps:"10 c/pierna",series:3,tags:[{t:"Glúteo/Isquio",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Sentadilla sumo con mancuerna",meta:"3×15 · 60s desc.",tip:"Pies a 45° — aprieta aductores y glúteo al subir.",machine:"Mancuerna 40 lb",dw:40,reps:"15",series:3,tags:[{t:"Glúteo/Aductores",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Puente de glúteo a una pierna",meta:"3×12 c/pierna · 60s desc.",tip:"Cadera nivelada — no dejes caer el lado libre.",machine:"Solo peso corporal (mancuerna opcional en la cadera)",dw:0,reps:"12 c/pierna",series:3,tags:[{t:"Glúteo",c:"m"},{t:"Peso corporal",c:"b"}]},
-       {name:"Peso muerto a una pierna con mancuerna",meta:"3×10 c/pierna · 60s desc.",tip:"Cadera cuadrada, mancuerna cerca del cuerpo — equilibrio + isquiotibial.",machine:"Mancuerna 15-20 lb",dw:15,reps:"10 c/pierna",series:3,tags:[{t:"Isquio/Equilibrio",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Patada de glúteo en cuadrupedia",meta:"3×15 c/pierna · 45s desc.",tip:"Empuja el talón al techo — no arquees la espalda baja.",machine:"Mancuerna en la corva o solo peso corporal",dw:10,reps:"15 c/pierna",series:3,tags:[{t:"Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
-       {name:"Bicicleta (bicycle crunch)",meta:"3×20 c/lado · 45s desc.",tip:"Codo hacia la rodilla contraria, extendé la otra pierna — ritmo controlado, no rápido.",machine:"Solo peso corporal",dw:0,reps:"20 c/lado",series:3,tags:[{t:"Oblicuos",c:"m"},{t:"Peso corporal",c:"b"}]}
+       {name:"Zancada caminando con mancuernas",meta:"3×10 c/pierna · 75s desc.",tip:"Rodilla delantera no pasa el pie.",machine:"Mancuernas 20-25 lb c/u",dw:20,reps:"10 c/pierna",series:3,tags:[{t:"Cuádriceps/Glúteo",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Sentadilla isométrica con pulso (wall sit + pulso)",meta:"3×20 pulsos · 60s desc.",tip:"Espalda en la pared, muslos paralelos al piso — quema controlada.",machine:"Solo peso corporal (opcional mancuerna en el regazo)",dw:0,reps:"20 pulsos",series:3,tags:[{t:"Cuádriceps",c:"m"},{t:"Peso corporal",c:"b"}]},
+       {name:"Elevación de talones (calf raise)",meta:"4×20 · 45s desc.",tip:"Pausa 1 seg arriba para mejor activación.",machine:"Solo peso corporal (mancuerna opcional en mano)",dw:0,reps:"20",series:4,tags:[{t:"Gemelos",c:"b"}]},
+       {name:"Elevación de piernas acostado",meta:"3×15 · 45s desc.",tip:"Zona lumbar pegada al piso todo el tiempo — bajá controlado sin dejar que la espalda se despegue.",machine:"Solo peso corporal",dw:0,reps:"15",series:3,tags:[{t:"Core inferior",c:"m"},{t:"Peso corporal",c:"b"}]}
      ],
-     cooldown:{time:"7 min",steps:["Estiramiento de glúteo (figura 4) 45s c/lado","Isquiotibial sentado 1 min","Respiración profunda 2 min"]}
+     cooldown:{time:"5 min",steps:["Cuádriceps de pie 30s c/lado","Isquiotibial sentado 1 min","Estiramiento de glúteo (figura 4) 45s c/lado","Pantorrilla en pared 30s c/lado"]}
+   }
+  },
+  {name:"Viernes",short:"V",focus:"Hombro + Brazos — 2do estímulo semanal + Core",color:"#c084fc",
+   gym:{
+     warmup:{time:"8 min",steps:["5 min bicicleta estática","Rotación de manguito rotador 15 reps c/lado","Facepull con cable ligero 15 reps","Elevaciones laterales vacías 10 reps","Plancha 30 seg"]},
+     exercises:[
+       {name:"Press militar con barra (OHP)",meta:"4×8-10 · 90s desc.",tip:"Core apretado, glúteos firmes — no arqueés la espalda baja. Barra frente al cuerpo, no detrás.",machine:"Rack de sentadilla con barra / banco vertical",dw:75,reps:"8-10",series:4,tags:[{t:"Deltoides",c:"m"},{t:"Barra",c:"w"},{t:"Compuesto",c:"c"}]},
+       {name:"Elevación lateral con mancuernas",meta:"4×12-15 · 60s desc.",tip:"Ligero lean forward. Codo semiflexionado. Sube hasta el hombro.",machine:"Rack de mancuernas — lado derecho del gym",dw:20,reps:"12-15",series:4,tags:[{t:"Deltoides med.",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Facepull en cable",meta:"3×15 · 45s desc.",tip:"Cable a altura de cara. Cuerda — jala hacia la frente. Salud del hombro tras tanto press.",machine:"Torre de cables doble — attachment cuerda al centro",dw:35,reps:"15",series:3,tags:[{t:"Deltoides post.",c:"m"},{t:"Cable",c:"p"}]},
+       {name:"Encogimiento con mancuernas",meta:"3×15 · 45s desc.",tip:"Movimiento vertical limpio. Sin rotar. Pausa arriba.",machine:"Rack de mancuernas — mancuernas 40-45 lb",dw:40,reps:"15",series:3,tags:[{t:"Trapecio",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Curl bíceps con barra EZ",meta:"4×10-12 · 60s desc.",tip:"Codos fijos a los costados. Supinación completa al subir.",machine:"Barra EZ + discos — área de pesas libres",dw:55,reps:"10-12",series:4,tags:[{t:"Bíceps",c:"m"},{t:"Barra EZ",c:"w"}]},
+       {name:"Curl martillo con mancuernas",meta:"3×12 · 45s desc.",tip:"Pulgar arriba en todo el recorrido. Controla la bajada.",machine:"Rack de mancuernas — lado derecho del gym",dw:30,reps:"12",series:3,tags:[{t:"Braquial",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Extensión tríceps sobre cabeza con mancuerna",meta:"3×12-15 · 60s desc.",tip:"Codos apuntando al techo, cerca de la cabeza — baja controlado detrás de la nuca.",machine:"Mancuerna — área de pesas libres",dw:25,reps:"12-15",series:3,tags:[{t:"Tríceps",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Bicicleta (crunch bicicleta)",meta:"3×20 (10 c/lado) · 45s desc.",tip:"Codo hacia la rodilla contraria, sin tirar del cuello — movimiento lento y controlado, no rápido.",machine:"Solo peso corporal",dw:0,reps:"20",series:3,tags:[{t:"Oblicuos",c:"m"},{t:"Peso corporal",c:"b"}]}
+     ],
+     cooldown:{time:"6 min",steps:["Hombro cruzado 30s c/lado","Estiramiento bíceps en pared 30s c/lado","Respiración profunda 2 min"]}
+   },
+   home:{
+     warmup:{time:"6 min",steps:["Rotación de hombros 2 min","Elevaciones laterales vacías 10 reps","Press con mancuernas muy ligero 10 reps","Plancha 30 seg"]},
+     exercises:[
+       {name:"Press de hombros con mancuernas",meta:"4×10 · 75s desc.",tip:"No bloquees el codo arriba — tensión continua.",machine:"Mancuernas 30-35 lb",dw:30,reps:"10",series:4,tags:[{t:"Deltoides ant.",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Elevación lateral con mancuernas",meta:"4×12 · 60s desc.",tip:"Lean forward ligero — activa el deltoides medio completo.",machine:"Mancuernas 15-20 lb",dw:15,reps:"12",series:4,tags:[{t:"Deltoides med.",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Elevación posterior inclinado",meta:"3×15 · 45s desc.",tip:"Torso inclinado a 45°, codos ligeramente flexionados — foco deltoides posterior, salud del hombro.",machine:"Mancuernas 10-15 lb",dw:10,reps:"15",series:3,tags:[{t:"Deltoides post.",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Encogimiento con mancuernas",meta:"3×15 · 45s desc.",tip:"Movimiento limpio — sin rotar. Pausa arriba.",machine:"Mancuernas 35 lb",dw:35,reps:"15",series:3,tags:[{t:"Trapecio",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Curl de bíceps alternado",meta:"4×10 c/lado · 60s desc.",tip:"Supinación completa de la muñeca al subir.",machine:"Mancuernas 25-30 lb",dw:25,reps:"10 c/lado",series:4,tags:[{t:"Bíceps",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Curl martillo",meta:"3×12 · 45s desc.",tip:"Pulgar arriba en todo el recorrido.",machine:"Mancuernas 25-30 lb",dw:25,reps:"12",series:3,tags:[{t:"Braquial",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Extensión de tríceps con mancuerna",meta:"3×15 · 45s desc.",tip:"Codo fijo apuntando al techo — solo mueve el antebrazo.",machine:"Mancuerna 20-25 lb",dw:20,reps:"15",series:3,tags:[{t:"Tríceps",c:"m"},{t:"Mancuerna",c:"w"}]},
+       {name:"Bicicleta (crunch bicicleta)",meta:"3×20 (10 c/lado) · 45s desc.",tip:"Codo hacia la rodilla contraria, sin tirar del cuello — movimiento lento y controlado, no rápido.",machine:"Solo peso corporal",dw:0,reps:"20",series:3,tags:[{t:"Oblicuos",c:"m"},{t:"Peso corporal",c:"b"}]}
+     ],
+     cooldown:{time:"6 min",steps:["Hombro cruzado 30s c/lado","Estiramiento bíceps en pared 30s c/lado","Respiración profunda 2 min"]}
    }
   }
 ];
