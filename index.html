@@ -535,7 +535,7 @@ let audioCtx=null,audioReady=false;
 function getWK(){const d=new Date(),j=new Date(d.getFullYear(),0,1),w=Math.ceil(((d-j)/86400000+j.getDay()+1)/7);return`${d.getFullYear()}-W${w}`;}
 function getWS(){return mode==='gym'?WG:WH;}
 function getWKey(di,ei){return`${mode}-w-${di}-${ei}`;}
-function getHKey(di,ei){return`h-${di}-${ei}`;}
+function getHKey(di,ei){return`h-${mode}-${di}-${ei}`;}
 function getSKey(di,ei,si){return`${mode}-s-${di}-${ei}-${si}`;}
 function getData(di){return mode==='gym'?DAYS[di].gym:DAYS[di].home;}
 
@@ -702,7 +702,10 @@ function buildDay(day,i){
     const ytSearch=`https://www.youtube.com/results?search_query=${encodeURIComponent(ex.name+' ejercicio técnica 2025')}&sp=EgIQAQ%3D%3D`;
     const ytBtn=`<a class="exc-video" href="${ytSearch}" target="_blank" rel="noopener" title="Ver demo en YouTube">▶</a>`;
     const machineH=ex.machine?`<div class="exc-machine">${ex.machine}</div>`:'';
-    const sugLabel=sw===0?'Peso corporal':`Sugerido: ${sw} lb`;
+    const lastSession=hist.length>0?hist[hist.length-1]:null;
+    const sugLabel=lastSession
+      ?(lastSession.w===0?'Última vez: peso corporal':`Última vez: ${lastSession.w} lb`)
+      :(ex.dw===0?'Sugerido: peso corporal':`Sugerido: ${ex.dw} lb`);
     return`
     <div class="exc" id="ec-${i}-${ei}">
       <div class="exc-hdr" id="eh-${i}-${ei}" onclick="togEx(${i},${ei})">
@@ -965,12 +968,21 @@ document.getElementById('mainEl').addEventListener('touchend',e=>{
 
 // ══ TIMER ══════════════════════════════════════════════════
 const CIRC=2*Math.PI*88;
+let tEndAt=0,tPausedMsLeft=0;
 function startTimer(s){
   closeTimer();tTot=s;tRem=s;tPaused=false;curRest=s;updPre(s);
+  tEndAt=Date.now()+s*1000;
   document.getElementById('tovEl').classList.add('active');
   document.getElementById('tPauseEl').textContent='Pausar';
   renderT();
-  tInt=setInterval(()=>{if(!tPaused){tRem--;renderT();if(tRem<=0){clearInterval(tInt);closeTimer();playTimerEnd();vib();showToast('¡A darle! 💪');}}},1000);
+  tInt=setInterval(tickTimer,250);
+}
+function tickTimer(){
+  if(tPaused)return;
+  const msLeft=tEndAt-Date.now();
+  tRem=Math.max(0,Math.ceil(msLeft/1000));
+  renderT();
+  if(msLeft<=0){clearInterval(tInt);closeTimer();playTimerEnd();vib();showToast('¡A darle! 💪');}
 }
 function renderT(){
   document.getElementById('tSecEl').textContent=tRem;
@@ -980,7 +992,12 @@ function renderT(){
 }
 function setPre(s){curRest=s;if(document.getElementById('tovEl').classList.contains('active'))startTimer(s);updPre(s);}
 function updPre(s){document.querySelectorAll('.tpbtn').forEach(b=>b.classList.toggle('ap',b.textContent.trim()===(s===120?'2 min':s===180?'3 min':s+'s')));}
-function togPause(){tPaused=!tPaused;document.getElementById('tPauseEl').textContent=tPaused?'Continuar':'Pausar';}
+function togPause(){
+  tPaused=!tPaused;
+  if(tPaused){tPausedMsLeft=tEndAt-Date.now();}
+  else{tEndAt=Date.now()+tPausedMsLeft;}
+  document.getElementById('tPauseEl').textContent=tPaused?'Continuar':'Pausar';
+}
 function closeTimer(){clearInterval(tInt);document.getElementById('tovEl').classList.remove('active');}
 
 // ══ MODALS ═════════════════════════════════════════════════
@@ -1050,7 +1067,7 @@ function genPDF(){
         data.exercises.forEach((ex,ei)=>{
           if(y>270){doc.addPage();doc.setFillColor(8,8,8);doc.rect(0,0,W,297,'F');doc.setFillColor(232,255,71);doc.rect(0,0,6,297,'F');y=20;}
           const cur=ws[getWKey(i,ei)]!==undefined?ws[getWKey(i,ei)]:ex.dw;
-          const hist=HS[getHKey(i,ei)]||[];const prev=hist.filter(h=>h.mode===mode);const prevW=prev.length>0?prev[prev.length-1].w:null;
+          const hist=HS[getHKey(i,ei)]||[];const prevW=hist.length>0?hist[hist.length-1].w:null;
           let ed=0;for(let si=0;si<ex.series;si++){if(SS[getSKey(i,ei,si)])ed++;}
           doc.setFillColor(ei%2===0?16:20,ei%2===0?16:20,ei%2===0?16:20);doc.rect(16,y-1,W-32,7,'F');
           doc.setTextColor(200,200,200);doc.setFontSize(7.5);doc.setFont('helvetica',ed===ex.series?'bold':'normal');
@@ -1081,6 +1098,10 @@ function onFirstInteraction(){
 document.addEventListener('touchstart',onFirstInteraction,{once:true,passive:true});
 document.addEventListener('click',onFirstInteraction,{once:true});
 setTimeout(()=>showToast('Deslizá para cambiar de día →'),1200);
+
+if('serviceWorker'in navigator){
+  window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{});});
+}
 </script>
 </body>
 </html>
